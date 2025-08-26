@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class HeavenStairs : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject player;
+    public GameObject targetPosition;
 
-    // Update is called once per frame
-    void Update()
+    public void OnStairBtn()
     {
-        
+        player.transform.position = Vector3.MoveTowards(gameObject.transform.position,targetPosition.transform.position, 1f);        
     }
 }

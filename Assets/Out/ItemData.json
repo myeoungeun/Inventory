@@ -1,0 +1,46 @@
+{
+  "Item" :
+  [
+    {
+      "itemID" : 1,
+      "itemName" : "다이아몬드",
+      "itemDescription" : "반짝거리는 광물이다. 예쁜 쓰레기다.",
+      "itemCount": 99
+    },
+    
+    {
+      "itemID" : 2,
+      "itemName" : "트로피",
+      "itemDescription" : "'오랫동안 누워있기 대회'에서 탄 1등 트로피다. 무기로 쓰기 좋아 보인다.",
+      "itemCount": 1
+    },
+
+    {
+      "itemID" : 3,
+      "itemName" : "고장난 게임기",
+      "itemDescription" : "바다에서 건진 고장난 게임기다. 쓰레기다.",
+      "itemCount": 1
+    },
+
+    {
+      "itemID" : 4,
+      "itemName" : "심장",
+      "itemDescription" : "바다에서 주운 토끼의 간이다. 먹을 수 있을 것 같다.",
+      "itemCount": 1
+    },
+
+    {
+      "itemID" : 5,
+      "itemName" : "은메달",
+      "itemDescription" : "녹슨 메달이다. 쓸모없는 물건이다.",
+      "itemCount": 1
+    },
+
+    {
+      "itemID" : 6,
+      "itemName" : "자물쇠",
+      "itemDescription" : "자물쇠다. 시끄러운 사람의 입에 채우면 된다.",
+      "itemCount": 1
+    }
+  ]
+}

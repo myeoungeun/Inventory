@@ -16,12 +16,12 @@ public class UIStatus : MonoBehaviour
 
     void Start()
     {
-        if (Singleton.Player != null)
+        if (Player.Instance != null)
         {
-            attackText.text = Singleton.Player.attack.ToString();
-            shieldText.text = Singleton.Player.shield.ToString();
-            hpText.text = Singleton.Player.hp.ToString();
-            criticalText.text = Singleton.Player.critical.ToString();
+            attackText.text = Player.Instance.attack.ToString();
+            shieldText.text = Player.Instance.shield.ToString();
+            hpText.text = Player.Instance.hp.ToString();
+            criticalText.text = Player.Instance.critical.ToString();
         }
     }
 }
