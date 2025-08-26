@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject uiMainMenu;
+    [SerializeField]private GameObject uiStatus;
+    [SerializeField]private GameObject uiInventory;
+
+    public void OnUiMainMenu()
     {
-        
+        uiMainMenu.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnUiStatus()
     {
-        
+        uiStatus.SetActive(true);
+    }
+
+    public void OnUiInventory()
+    {
+        uiInventory.SetActive(true);
     }
 }
