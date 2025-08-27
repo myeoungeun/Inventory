@@ -10,9 +10,6 @@ public class UIStatus : MonoBehaviour
     public TextMeshProUGUI shieldText;
     public TextMeshProUGUI hpText;
     public TextMeshProUGUI criticalText;
-    void Awake()
-    {
-    }
 
     void Start()
     {

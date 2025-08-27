@@ -24,6 +24,10 @@ public class UIInventory : MonoBehaviour
     public Button UnEquipButton;
     public Button ThrowButton;
     public Slot selectedSlot;
+    public TextMeshProUGUI hpText;
+    public TextMeshProUGUI shieldText;
+    public bool equipped = false;
+    public GameObject equippedItem;
 
 #if UNITY_EDITOR
     private void OnValidate() {
@@ -94,7 +98,7 @@ public class UIInventory : MonoBehaviour
         }
     }
     
-    public void OnClickThrowButton()
+    public void OnClickThrowButton() //아이템 버리기
     {
         if(selectedSlot != null && selectedSlot.item != null)
         {
@@ -104,6 +108,38 @@ public class UIInventory : MonoBehaviour
             TextClear();
             CurrentInventoryTxt.text = items.Count.ToString(); // 개수 갱신
             selectedSlot = null;             // 선택 초기화
+        }
+    }
+
+    public void UseItem() //아이템 사용
+    {
+        if(selectedSlot != null && selectedSlot.item != null)
+        {
+            Player.Instance.hp += selectedSlot.item.consumables[0].value;
+            hpText.text = Player.Instance.hp.ToString(); //상태창 UI 반영
+            OnClickThrowButton();
+        }
+    }
+
+    public void EquipItem() //아이템 장착
+    {
+        if (!equipped)
+        {
+            Player.Instance.shield += selectedSlot.item.shield;
+            shieldText.text = Player.Instance.shield.ToString();
+            equipped = true;
+            equippedItem.SetActive(true);
+        }
+    }
+
+    public void UnEquipItem() //아이템 장착 해제
+    {
+        if (equipped) //장착상태일 때만 해제 가능
+        {
+            Player.Instance.shield -= selectedSlot.item.shield;
+            shieldText.text = Player.Instance.shield.ToString();
+            equipped = false;
+            equippedItem.SetActive(false);
         }
     }
 }

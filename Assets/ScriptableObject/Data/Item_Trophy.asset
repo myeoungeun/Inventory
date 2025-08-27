@@ -16,5 +16,7 @@ MonoBehaviour:
   itemDescription: "'\uC624\uB7AB\uB3D9\uC548 \uB204\uC6CC\uC788\uAE30 \uB300\uD68C'\uC5D0\uC11C
     \uD0C4 1\uB4F1 \uD2B8\uB85C\uD53C\uB2E4. \uC0AC\uC6A9\uD560 \uC218 \uC788\uB2E4."
   type: 0
+  shield: 9999
+  attack: 0
   itemImage: {fileID: 21300110, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   consumables: []

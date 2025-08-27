@@ -15,7 +15,7 @@ public enum ConsumableType
 [System.Serializable] public class ItemConsumable
 {
   public ConsumableType type;
-  public float value;
+  public int value;
 }
 
 
@@ -27,6 +27,8 @@ public class Item : ScriptableObject
   public string itemName;
   public string itemDescription;
   public ItemType type;
+  public int shield;
+  public int attack;
   public Sprite itemImage;
     
   [Header("Consumable")]

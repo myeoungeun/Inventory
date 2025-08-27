@@ -22,7 +22,6 @@ public class HeavenStairs : MonoBehaviour
     {
         Vector3 originalScale = player.transform.localScale;
         Vector3 targetScale = new Vector3(Random.Range(minScale, maxScale), Random.Range(minScale, maxScale), 1f);
-        float tiltDirection = 1f; // 기울기 방향
         
         while(Vector3.Distance(player.transform.position, targetPosition.position) > 0.01f)
         {
