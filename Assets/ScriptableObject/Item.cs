@@ -28,10 +28,6 @@ public class Item : ScriptableObject
   public string itemDescription;
   public ItemType type;
   public Sprite itemImage;
-
-  [Header("Stacking")]
-  public bool canStack; //여러개 가질 수 있는지
-  public int maxStackAmount; //얼마나 가질 수 있는지
     
   [Header("Consumable")]
   public ItemConsumable[] consumables; //먹었을 때 피 회복 등의 효과 주는거

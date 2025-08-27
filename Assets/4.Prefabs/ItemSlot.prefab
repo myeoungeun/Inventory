@@ -345,3 +345,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1244618010039810491}
+  text: {fileID: 270782144180207734}
+  itemName: {fileID: 0}
+  itemDescription: {fileID: 0}

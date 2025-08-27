@@ -25,12 +25,10 @@ public class Player : Singleton<Player>
             Collider2D hit = Physics2D.OverlapPoint(worldPos); //클릭한 곳에 오브젝트(아이템) 있는지 체크
             if (hit != null) //클릭한 곳에 오브젝트가 있으면
             {
-                Debug.Log($"Hit Object: {hit.name}"); //클릭한 아이템 정보 띄우기
                 IObjectItem clickInterface = hit.GetComponent<IObjectItem>(); //클릭한 오브젝트가 아이템 인터페이스를 가지고 있는지 확인
                 if (clickInterface != null)
                 {
                     Item item = clickInterface.ClickItem(); //아이템 가져와서
-                    Debug.Log($"Clicked Item: {item.itemName}");
                     inventory.AddItem(item); //인벤토리에 아이템 추가
                     clickInterface.DestroyObject();
                 }

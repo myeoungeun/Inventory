@@ -17,8 +17,6 @@ MonoBehaviour:
     \uBA39\uC744 \uC218 \uC788\uC744 \uAC83 \uAC19\uB2E4."
   type: 1
   itemImage: {fileID: 21300040, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
-  canStack: 1
-  maxStackAmount: 3
   consumables:
   - type: 0
     value: 20
