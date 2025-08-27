@@ -10,12 +10,9 @@ public enum ItemType
 }
 
 public enum ConsumableType
-{
-  Health,
-  Hunger
-}
+{ hp }
 
-[System.Serializable] public class ItemDataConsumable
+[System.Serializable] public class ItemConsumable
 {
   public ConsumableType type;
   public float value;
@@ -24,21 +21,18 @@ public enum ConsumableType
 
 [CreateAssetMenu(fileName = "Item", menuName = "New Item")]
 
-public class ItemData : ScriptableObject
+public class Item : ScriptableObject
 {
   [Header("Info")]
   public string displayName;
   public string description;
   public ItemType type;
-  public Sprite icon;
+  public Sprite itemImage;
 
   [Header("Stacking")]
   public bool canStack; //여러개 가질 수 있는지
   public int maxStackAmount; //얼마나 가질 수 있는지
     
   [Header("Consumable")]
-  public ItemDataConsumable[] consumables; //먹었을 때 피 회복 등의 효과 주는거
-    
-  [Header("Equip")]
-  public GameObject equipPrefab;
+  public ItemConsumable[] consumables; //먹었을 때 피 회복 등의 효과 주는거
 }

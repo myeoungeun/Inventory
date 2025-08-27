@@ -9,17 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 871368f87f784d44ca0924bcff3c0ddd, type: 3}
   m_Name: Item_Trophy
-  m_EditorClassIdentifier: Assembly-CSharp::ItemData
+  m_EditorClassIdentifier: 
   displayName: "\uD2B8\uB85C\uD53C"
   description: "'\uC624\uB7AB\uB3D9\uC548 \uB204\uC6CC\uC788\uAE30 \uB300\uD68C'\uC5D0\uC11C
     \uD0C4 1\uB4F1 \uD2B8\uB85C\uD53C\uB2E4. \uBB34\uAE30\uB85C \uC4F0\uAE30 \uC88B\uC544
     \uBCF4\uC778\uB2E4."
   type: 0
-  icon: {fileID: 21300108, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
-  dropPrefab: {fileID: 0}
+  itemImage: {fileID: 21300110, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   canStack: 0
   maxStackAmount: 0
   consumables: []
-  equipPrefab: {fileID: 0}

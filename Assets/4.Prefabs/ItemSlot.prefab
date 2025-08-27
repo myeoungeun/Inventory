@@ -236,7 +236,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7387898000034378000}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -356,11 +356,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3043985e212ae69469e95755460eb9a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
-  button: {fileID: 6783612651546469008}
-  icon: {fileID: 1244618010039810491}
-  quantityText: {fileID: 270782144180207734}
-  inventory: {fileID: 0}
-  index: 0
-  equipped: 0
-  quantity: 0
+  image: {fileID: 1244618010039810491}

@@ -1,53 +1,53 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEditor.Timeline.Actions;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class UIInventory : MonoBehaviour
 {
-    public ItemSlot[] slots;
+    public List<Item> items;
 
-    public GameObject inventoryWindow;
-    public Transform slotPanel;
+    [SerializeField]
+    private Transform slotParent; //Bag
+    [SerializeField]
+    private Slot[] slots;
 
-    [Header("Selected Item")]
-    public TextMeshProUGUI selectedItemName;
-    public TextMeshProUGUI selectedItemDescription;
-    public TextMeshProUGUI selectedItemStatName;
-    public TextMeshProUGUI selectedItemStatValue;
-    public GameObject useButton;
-    public GameObject equipButton;
-    public GameObject unEquipButton;
-    public GameObject dropButton;
-    
-    private ItemSlot selectedItem;
-    private int selectedItemIndex = 0;
+    public TextMeshProUGUI CurrentInventoryTxt;
+    public TextMeshProUGUI MaxInventoryTxt;
 
-    private int curEquipIndex;
-    
-    public void SelectItem(int index)
-    {
-        if (slots[index].item == null) return; //아이템 정보가 없으면 그냥 return
+#if UNITY_EDITOR
+    private void OnValidate() {
+        slots = slotParent.GetComponentsInChildren<Slot>();
+    }
+#endif
 
-        selectedItem = slots[index];
-        selectedItemIndex = index;
+    void Awake() {
+        FreshSlot();
+        MaxInventoryTxt.text = slots.Length.ToString();
+        CurrentInventoryTxt.text = items.Count.ToString(); //시작할 때 가지고 있는 아이템 개수 반영
+        
+    }
 
-        selectedItemName.text = selectedItem.item.displayName; //선택한 아이템 이름
-        selectedItemDescription.text = selectedItem.item.description; //설명
-
-        selectedItemStatName.text = string.Empty; //아이템에 무조건 회복 등의 기능이 있진 않으니 일단 empty
-        selectedItemStatValue.text = string.Empty;
-
-        for(int i = 0; i< selectedItem.item.consumables.Length; i++) //회복 등의 기능이 있는 아이템이 있다면 실행
-        {
-            selectedItemStatName.text += selectedItem.item.consumables[i].type.ToString() + "\n";
-            selectedItemStatValue.text += selectedItem.item.consumables[i].value.ToString() + "\n";
+    public void FreshSlot() { //아이템창 초기화
+        int i = 0;
+        for (; i < items.Count && i < slots.Length; i++) {
+            slots[i].item = items[i];
         }
+        for (; i < slots.Length; i++) {
+            slots[i].item = null;
+        }
+    }
 
-        useButton.SetActive(selectedItem.item.type == ItemType.Consumable);
-        equipButton.SetActive(selectedItem.item.type == ItemType.Equipable && !slots[index].equipped); //아이템 장착
-        unEquipButton.SetActive(selectedItem.item.type == ItemType.Equipable && slots[index].equipped); //아이템 해제
-        dropButton.SetActive(true);
+    public void AddItem(Item _item) { //아이템 추가
+        if (items.Count < slots.Length) {
+            items.Add(_item);
+            FreshSlot();
+            CurrentInventoryTxt.text = items.Count.ToString(); //현재 아이템 개수 반영
+        } else {
+            print("슬롯이 가득 차 있습니다.");
+        }
     }
 }
