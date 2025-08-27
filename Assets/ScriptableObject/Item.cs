@@ -24,8 +24,8 @@ public enum ConsumableType
 public class Item : ScriptableObject
 {
   [Header("Info")]
-  public string displayName;
-  public string description;
+  public string itemName;
+  public string itemDescription;
   public ItemType type;
   public Sprite itemImage;
 

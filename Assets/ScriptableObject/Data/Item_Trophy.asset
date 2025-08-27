@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 871368f87f784d44ca0924bcff3c0ddd, type: 3}
   m_Name: Item_Trophy
   m_EditorClassIdentifier: 
-  displayName: "\uD2B8\uB85C\uD53C"
-  description: "'\uC624\uB7AB\uB3D9\uC548 \uB204\uC6CC\uC788\uAE30 \uB300\uD68C'\uC5D0\uC11C
+  itemName: "\uD2B8\uB85C\uD53C"
+  itemDescription: "'\uC624\uB7AB\uB3D9\uC548 \uB204\uC6CC\uC788\uAE30 \uB300\uD68C'\uC5D0\uC11C
     \uD0C4 1\uB4F1 \uD2B8\uB85C\uD53C\uB2E4. \uBB34\uAE30\uB85C \uC4F0\uAE30 \uC88B\uC544
     \uBCF4\uC778\uB2E4."
   type: 0
